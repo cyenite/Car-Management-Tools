@@ -1,3 +1,4 @@
+import 'package:car_management_tools/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/pages.dart';
@@ -13,10 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Car Management Tools',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(),
+      theme: ThemeData(primaryColor: primaryColor),
+      home: const BottomNavigation(),
     );
   }
 }

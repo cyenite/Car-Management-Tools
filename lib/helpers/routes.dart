@@ -7,37 +7,37 @@ appRoutes() => [
       GetPage(
         name: '/root',
         page: () => const BottomNavigation(),
-        transition: Transition.leftToRightWithFade,
+        transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/home',
         page: () => const HomePage(),
-        transition: Transition.leftToRightWithFade,
+        transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/rate',
         page: () => const RateDriverPage(),
-        transition: Transition.leftToRightWithFade,
+        transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/business',
         page: () => const BusinessPage(),
-        transition: Transition.leftToRightWithFade,
+        transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/recruitment',
         page: () => const RecruitmentPage(),
-        transition: Transition.leftToRightWithFade,
+        transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 500),
       ),
       GetPage(
         name: '/accept-terms',
         page: () => const AcceptTerms(),
-        transition: Transition.leftToRightWithFade,
+        transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 500),
       ),
     ];

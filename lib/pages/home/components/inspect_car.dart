@@ -1,5 +1,7 @@
 import 'package:car_management_tools/constants/constants.dart';
 import 'package:car_management_tools/controllers/controllers.dart';
+import 'package:car_management_tools/pages/home/components/items_availability_form.dart';
+import 'package:car_management_tools/pages/home/components/submit_form.dart';
 import 'package:car_management_tools/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +16,7 @@ class InspectCar extends StatefulWidget {
 }
 
 class _InspectCarState extends State<InspectCar> {
-  InspectionController _inspectionController = Get.find<InspectionController>();
+  final InspectionController _inspectionController = Get.find<InspectionController>();
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +49,25 @@ class _InspectCarState extends State<InspectCar> {
                   });
                 }),
             mediumVSpacer,
-            RoundedButton(
-              text: 'Let\'s begin inspecting',
-              onTap: () {},
-              icon: Icons.arrow_forward_ios,
-              width: MediaQuery.of(context).size.width * 0.7,
-              color: primaryColor,
+            InkWell(
+              onTap: () {
+                _inspectionController.checkedIndex.value < _inspectionController.inspectionItems.length - 1
+                    ? Get.off(
+                        () => ItemsAvailabilityForm(index: _inspectionController.checkedIndex.value),
+                      )
+                    : Get.off(
+                        () => SubmitForm(index: _inspectionController.checkedIndex.value),
+                      );
+              },
+              child: Obx(() {
+                return RoundedButton(
+                  text: _inspectionController.checkedIndex.value != 0 ? 'Let\'s continue where we left' : 'Let\'s begin inspecting',
+                  icon: Icons.arrow_forward_ios,
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  color: primaryColor,
+                  pretext: false,
+                );
+              }),
             ),
             largeVSpacer,
           ],
@@ -76,13 +91,13 @@ class _InspectCarState extends State<InspectCar> {
         indicator: Container(
           decoration: BoxDecoration(
             border: Border.all(color: isChecked ? green : lightBoxStroke),
-            color: white,
+            color: isChecked ? green : white,
             borderRadius: BorderRadius.circular(15.0),
           ),
           child: Center(
             child: Text(
               '${index + 1}',
-              style: GoogleFonts.rubik(fontSize: 16, color: isChecked ? green : lightBoxStroke),
+              style: GoogleFonts.rubik(fontSize: 16, color: isChecked ? white : lightBoxStroke),
             ),
           ),
         ),

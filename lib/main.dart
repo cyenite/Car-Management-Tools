@@ -3,7 +3,7 @@ import 'package:car_management_tools/controllers/controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'pages/pages.dart';
+import 'helpers/routes.dart';
 
 void main() {
   Get.put(InspectionController());
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Car Management Tools',
       theme: ThemeData(primaryColor: primaryColor),
-      home: const BottomNavigation(),
+      initialRoute: '/root',
+      getPages: appRoutes(),
     );
   }
 }

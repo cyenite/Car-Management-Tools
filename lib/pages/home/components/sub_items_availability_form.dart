@@ -282,7 +282,7 @@ class _ItemsAvailabilityFormState extends State<ItemsAvailabilityForm> {
               children: [
                 InkWell(
                   onTap: () {
-                    itemAvailable != null && itemAvailable == true && widget.index > 0 ? _loadPreviousItem(widget.index) : null;
+                    itemAvailable != null && widget.index > 0 ? _loadPreviousItem(widget.index) : null;
                   },
                   child: RoundedButton(
                     text: 'Back',
@@ -294,9 +294,7 @@ class _ItemsAvailabilityFormState extends State<ItemsAvailabilityForm> {
                 ),
                 InkWell(
                   onTap: () {
-                    itemAvailable != null && itemAvailable == true && widget.index < _inspectionController.inspectionItems.length - 1
-                        ? _loadNextItem(widget.index)
-                        : null;
+                    itemAvailable != null && widget.index < _inspectionController.inspectionItems.length - 1 ? _loadNextItem(widget.index) : null;
                   },
                   child: RoundedButton(
                     text: 'Next',

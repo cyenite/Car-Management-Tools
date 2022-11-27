@@ -1,4 +1,3 @@
-import 'package:car_management_tools/constants/style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -48,31 +47,29 @@ class _HomePageState extends State<HomePage> {
           _currentTabIndex = index;
         });
       },
-      child: Expanded(
-        child: Container(
-          height: 30,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.0),
-            border: Border.all(color: blackText, width: 0.5),
-            color: isActive ? brown : white,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  icon,
-                  color: isActive ? white : blue,
-                ),
-                Text(
-                  label,
-                  maxLines: 2,
-                  style: GoogleFonts.rubik(color: isActive ? white : blackText, fontSize: 12),
-                ),
-              ],
-            ),
+      child: Container(
+        height: 30,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          border: Border.all(color: blackText, width: 0.5),
+          color: isActive ? brown : white,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(
+                icon,
+                color: isActive ? white : blue,
+              ),
+              Text(
+                label,
+                maxLines: 2,
+                style: GoogleFonts.rubik(color: isActive ? white : blackText, fontSize: 12),
+              ),
+            ],
           ),
         ),
       ),

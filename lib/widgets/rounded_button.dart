@@ -30,8 +30,8 @@ class _RoundedButtonState extends State<RoundedButton> {
         border: Border.all(color: blackText, width: 0.5),
         boxShadow: const [
           BoxShadow(
-            color: blackText,
-            blurRadius: 2.0,
+            color: lightBoxStroke,
+            blurRadius: 5.0,
             spreadRadius: 0.0,
             offset: Offset(2.0, 2.0),
           )

@@ -23,6 +23,7 @@ class _InspectCarState extends State<InspectCar> {
     return Container(
       color: white,
       width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
       child: Padding(
         padding: const EdgeInsets.only(left: 20.0, right: 20.0),
         child: Column(
@@ -31,23 +32,26 @@ class _InspectCarState extends State<InspectCar> {
           children: [
             mediumVSpacer,
             Text(
-              'It takes 5 steps and less than 2 minutes\n to inspect your car.',
+              'It takes ${_inspectionController.inspectionItems.length} steps and less than 2 minutes\n to inspect your car.',
               style: GoogleFonts.rubik(color: lightText, fontWeight: FontWeight.w400),
               textAlign: TextAlign.center,
             ),
             mediumVSpacer,
-            ListView.builder(
-                shrinkWrap: true,
-                itemCount: _inspectionController.inspectionItems.length,
-                itemBuilder: (c, i) {
-                  return Obx(() {
-                    return inspectionListItem(
-                        item: _inspectionController.inspectionItems[i]['name'],
-                        index: i,
-                        length: _inspectionController.inspectionItems.length,
-                        isChecked: _inspectionController.inspectionItems[i]['checked']);
-                  });
-                }),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.7,
+              child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: _inspectionController.inspectionItems.length,
+                  itemBuilder: (c, i) {
+                    return Obx(() {
+                      return inspectionListItem(
+                          item: _inspectionController.inspectionItems[i]['name'],
+                          index: i,
+                          length: _inspectionController.inspectionItems.length,
+                          isChecked: _inspectionController.inspectionItems[i]['checked']);
+                    });
+                  }),
+            ),
             mediumVSpacer,
             InkWell(
               onTap: () {
@@ -103,12 +107,12 @@ class _InspectCarState extends State<InspectCar> {
         ),
       ),
       endChild: SizedBox(
-        height: 60.0,
+        height: 70.0,
         width: MediaQuery.of(context).size.width,
         child: Row(
           children: [
             SizedBox(
-              width: 50.0,
+              width: MediaQuery.of(context).size.width * 0.1,
               child: Divider(
                 color: isChecked ? green : lightBoxStroke,
               ),

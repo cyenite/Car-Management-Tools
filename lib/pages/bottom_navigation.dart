@@ -34,7 +34,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
         ),
         centerTitle: false,
       ),
-      body: _pages[_currentIndex],
+      body: SingleChildScrollView(
+        child: _pages[_currentIndex],
+      ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(

@@ -1,7 +1,9 @@
+import 'package:car_management_tools/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/constants.dart';
+import 'pages.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -13,9 +15,17 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
 
+  final List<Widget> _pages = [
+    const HomePage(),
+    const RateDriverPage(),
+    const BusinessPage(),
+    const RecruitmentPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: white,
         title: Text(
@@ -24,7 +34,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         ),
         centerTitle: false,
       ),
-      body: Container(),
+      body: _pages[_currentIndex],
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -47,22 +57,17 @@ class _BottomNavigationState extends State<BottomNavigation> {
           type: BottomNavigationBarType.fixed,
           elevation: 0,
           items: [
-            bottomNavigationItem(
-                icon: Icons.home_filled, label: 'Home', isActive: _currentIndex == 0),
-            bottomNavigationItem(
-                icon: Icons.stars_rounded, label: 'Rate A Driver', isActive: _currentIndex == 1),
-            bottomNavigationItem(
-                icon: Icons.storefront, label: 'Business', isActive: _currentIndex == 2),
-            bottomNavigationItem(
-                icon: Icons.work_history, label: 'Recruitment', isActive: _currentIndex == 3),
+            bottomNavigationItem(icon: Icons.home_filled, label: 'Home', isActive: _currentIndex == 0),
+            bottomNavigationItem(icon: Icons.stars_rounded, label: 'Rate A Driver', isActive: _currentIndex == 1),
+            bottomNavigationItem(icon: Icons.storefront, label: 'Business', isActive: _currentIndex == 2),
+            bottomNavigationItem(icon: Icons.work_history, label: 'Recruitment', isActive: _currentIndex == 3),
           ],
         ),
       ),
     );
   }
 
-  BottomNavigationBarItem bottomNavigationItem(
-      {required IconData icon, required String label, required bool isActive}) {
+  BottomNavigationBarItem bottomNavigationItem({required IconData icon, required String label, required bool isActive}) {
     return BottomNavigationBarItem(
       icon: Container(
         height: isActive ? 50 : null,

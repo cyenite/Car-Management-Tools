@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constants/constants.dart';
+import '../../../constants/constants.dart';
 
-class RecruitmentPage extends StatefulWidget {
-  const RecruitmentPage({Key? key}) : super(key: key);
+class TermsConditions extends StatefulWidget {
+  const TermsConditions({Key? key}) : super(key: key);
 
   @override
-  State<RecruitmentPage> createState() => _RecruitmentPageState();
+  State<TermsConditions> createState() => _TermsConditionsState();
 }
 
-class _RecruitmentPageState extends State<RecruitmentPage> {
+class _TermsConditionsState extends State<TermsConditions> {
   @override
   Widget build(BuildContext context) {
     return Container(
       color: white,
       child: Center(
         child: Text(
-          'Recruitment Page',
+          'Terms and Conditions Tab',
           style: GoogleFonts.rubik(fontWeight: FontWeight.w600, color: blackText),
         ),
       ),

@@ -11,3 +11,6 @@ const Color white = Color(0xffFFFFFF);
 const Color blue = Color(0xff0274B3);
 
 const Color blackText = Color(0xff3B3B3B);
+const Color lightText = Color(0xff7D7D7D);
+const Color lightBoxFill = Color(0xffF2F2F2);
+const Color lightBoxStroke = Color(0xff9C9A9A);

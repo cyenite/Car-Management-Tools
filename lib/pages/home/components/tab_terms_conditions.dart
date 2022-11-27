@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../constants/constants.dart';
 import '../../../widgets/rounded_button.dart';
-import 'accept_terms.dart';
+import 'sub_accept_terms.dart';
 
 class TermsConditions extends StatefulWidget {
   const TermsConditions({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:car_management_tools/constants/constants.dart';
 import 'package:car_management_tools/controllers/controllers.dart';
-import 'package:car_management_tools/pages/home/components/items_availability_form.dart';
-import 'package:car_management_tools/pages/home/components/submit_form.dart';
+import 'package:car_management_tools/pages/home/components/sub_items_availability_form.dart';
+import 'package:car_management_tools/pages/home/components/sub_submit_form.dart';
 import 'package:car_management_tools/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

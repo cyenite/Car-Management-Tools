@@ -13,7 +13,7 @@
       </br><b>Car Inspection Tab</b>
             </td>            
             <td style="text-align: center">
-                <img src="https://raw.githubusercontent.com/cyenite/Car-Management-Tools/master/screenshots/accept_term.png" width="200"/>
+                <img src="https://raw.githubusercontent.com/cyenite/Car-Management-Tools/master/screenshots/accept_terms.png" width="200"/>
       </br><b>Terms & Conditions Tab</b>
             </td>
             <td style="text-align: center">
